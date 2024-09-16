@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting App</title>
+</head>
+<style>
+    .body {
+        background-color: rgb(206, 167, 115);
+
+    }
+
+    .container {
+        text-align: center;
+        position: relative;
+        margin-top: 150px;
+    }
+
+    h1 {
+        color: brown;
+        font-size: 3rem;
+    }
+
+    button {
+        height: 50px;
+        width: 120px;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 2px 3px grey;
+        cursor: pointer;
+        background-color: rgb(230, 191, 191);
+    }
+
+    button a {
+        text-decoration: none;
+        color: rgb(204, 18, 18);
+        font-size: 0.85rem;
+        font-weight: bold;
+        text-shadow: 2px 2px rgb(160, 149, 149);
+    }
+
+    #greetings {
+        font-weight: bold;
+        color: green;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Personalized Greeting App</h1>
+        <button onclick="response()"> <a href="#">Get Greeting</a></button>
+        <p id="greetings"> </p>
+    </div>
+
+
+
+
+    <script>
+        function response() {
+            let userName = prompt("Enter Your Name");
+            let userAge = prompt("Enter Your Age");
+            if (userAge >= 18) {
+                document.getElementById("greetings").innerHTML = `Welcome!  ${userName} , Your are eligible to join`;
+            } 
+            else if (userAge > 0 && userAge < 18) {
+                document.getElementById("greetings").innerHTML = `Sorry! ${userName}  Your are not eligible to join`;
+            }
+            else {
+                document.getElementById("greetings").innerHTML = `Please ${userName}  Enter Again!`;
+            }
+        }
+    </script>
+</body>
+
+</html>
